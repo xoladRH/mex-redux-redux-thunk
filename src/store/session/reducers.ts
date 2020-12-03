@@ -11,7 +11,7 @@ export interface AccessToken {
 export interface State {
   accessToken: AccessToken
 }
-
+ 
 const accessToken = (state: AccessToken = { isFetching: false }, action: Action): AccessToken => {
   switch (action.type) {
   case 'SET':
