@@ -21,6 +21,6 @@ const accessToken = (state: AccessToken = { isFetching: false }, action: Action)
   }
   return state
 }
-export default combineReducers<State>({
+export default combineReducers<any>({
   accessToken
 })
