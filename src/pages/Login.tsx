@@ -33,12 +33,12 @@ class Login extends React.Component<Props, State> {
     return (
       <div className="container">
         <div className="row justify-content-center mb-3">
-          <div className="col-6">
-          {
+        <div className="col-6">
+          {   // (2)    dispatch(set('this_is_access_token')) will make accessToken no longer falsey
             this.props.accessToken.accessToken && 'You are logged In!'
-            ||
+            ||      // (1)   dispatch(isFetching(true)) in our login will set  isFetching
             this.props.accessToken.isFetching && 'Faking Login in' 
-            ||
+            ||                       // (0) First we have our button  // thunk action
             <button className="btn btn-primary" onClick={() => this.props.login('someusername', 'somepassword')}>
               Login
             </button>
